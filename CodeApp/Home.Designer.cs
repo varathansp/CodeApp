@@ -40,6 +40,7 @@
             this.btnFactorial.TabIndex = 0;
             this.btnFactorial.Text = "Factorial";
             this.btnFactorial.UseVisualStyleBackColor = true;
+            this.btnFactorial.Click += new System.EventHandler(this.btnFactorial_Click);
             // 
             // txtInput
             // 
