@@ -17,11 +17,21 @@ namespace CodeApp
         {
             InitializeComponent();
         }
-
+        Base obj = new Base();
         private void btnFactorial_Click(object sender, EventArgs e)
         {
-            Base obj = new Base();
+            
             MessageBox.Show(obj.Factorial(Convert.ToInt32(txtInput.Text)).ToString());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+
+            
+                MessageBox.Show(obj.IsPalindrom(txtInput.Text));
+            
+             
         }
     }
 }
