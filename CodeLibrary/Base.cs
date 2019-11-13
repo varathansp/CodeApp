@@ -18,7 +18,19 @@ namespace CodeLibrary
             }
             return sum;
         }
-
+        public string Fibonacci(int input)
+        {
+            int numFirst = 0, numSecond = 1,temp;
+            StringBuilder result = new StringBuilder("0,1");
+            for (int i = 1; i < input; i++)
+            {
+                temp = numFirst + numSecond;
+                numFirst = numSecond;
+                numSecond = temp;
+                result.Append("," + temp);
+            }
+            return result.ToString(); 
+        }
         public string NoOfOccurence_Integer(int[] input)
         {
             int length = input.Length;
@@ -90,6 +102,28 @@ namespace CodeLibrary
                     return "Not palindrome";
             }
             return "Palindrome";
+        }
+        public void FindSubstring(string mainString, string subString)
+        {
+            int flag = 0, i = 0, j = 0;
+            while (i < mainString.Length)
+            {
+
+                if (mainString[i] == subString[j])
+                {
+                    flag++;
+                    if (flag == subString.Length)
+                    { Console.WriteLine("Starting Position {0} Ending Position {1}", i - flag + 1, i); i++; j = 0; continue; }
+                    i++;
+                    j++;
+                }
+                else
+                {
+                    i = i + 1 - flag;
+                    j = 0;
+                    flag = 0;
+                }
+            }
         }
     }
 }
